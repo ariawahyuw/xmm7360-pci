@@ -6,10 +6,9 @@ PWD := $(shell pwd)
 ccflags-y := -Wno-multichar
 
 default:
-	$(MAKE) -C $(KDIR) M=$(PWD) modules
-
+	$(MAKE) -C $(KDIR) M=$(PWD) LLVM=1 modules
 clean:
-	$(MAKE) -C $(KDIR) M=$(PWD) clean
+	$(MAKE) -C $(KDIR) M=$(PWD) LLVM=1 clean
 
 install:
 	$(MAKE) -C $(KDIR) M=$(PWD) modules_install
