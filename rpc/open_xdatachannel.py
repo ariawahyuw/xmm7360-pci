@@ -198,6 +198,7 @@ if (myconnection is not None):
         config["ipv4"]["dns"] = dbus.Array([dbus.UInt32(ip) for ip in dbus_ip],
                                            signature=dbus.Signature("u")
                                            )
+        config["ipv4"]["dns-priority"] = cfg.metric
         settings_connection.Update(config)
 else:
     print("adding connection")
